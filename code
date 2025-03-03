@@ -1,0 +1,26 @@
+K = []
+vowel_actual = []
+vowel_actual2 = []
+new_order = []
+word = input("enter word\n")
+direction = int(input("enter your direction: + is left, - is right\n"))
+for letter in word:
+    K.append(letter)
+
+vowels = ["a","e","i","o","u",
+          "A","E","I","O","U"]
+for a in K:
+    if a in vowels:
+        vowel_actual.append(a)
+
+vowel_actual2 = vowel_actual[direction:] + vowel_actual[:direction]
+b = 0
+for i in K:
+    if i not in vowel_actual:
+        new_order.append(i)
+    else:
+        new_order.append(vowel_actual2[b])
+        b += 1
+        
+new = ''.join(new_order)
+print(new)
